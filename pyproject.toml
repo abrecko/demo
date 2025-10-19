@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "abrecko__demo"
+version = "0.2.0"
+description = "A tiny calculator service and library"
+authors = [ { name = "abrecko" } ]
+readme = "README.md"
+requires-python = ">=3.10"
+
+dependencies = [
+    "fastapi>=0.95",
+    "uvicorn[standard]>=0.21",
+    "pydantic>=1.10",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.0",
+    "pytest-cov",
+    "httpx",
+]
+
+[tool.ruff]
+line-length = 88
+
+[tool.black]
+line-length = 88
