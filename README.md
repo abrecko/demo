@@ -180,6 +180,32 @@ abrecko__demo/
 
 ## API Reference
 
+## FastAPI service
+
+This repository now includes a small FastAPI service exposing the calculator functions.
+
+Run locally:
+
+```bash
+pip install -e .
+uvicorn app.main:app --reload --port 8000
+```
+
+Run via Docker:
+
+```bash
+docker build -t abrecko-demo .
+docker run -p 8000:8000 abrecko-demo
+```
+
+Sample cURL:
+
+```bash
+curl -X POST "http://localhost:8000/calc/plus" -H "Content-Type: application/json" -d '{"a":10,"b":2}'
+```
+
+
+
 ### calc.py
 
 | Function | Parameters | Returns | Description |
